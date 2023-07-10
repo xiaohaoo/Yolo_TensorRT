@@ -99,7 +99,6 @@ void TrtEngine::preprocess()
     int w_pad = max_wh - img_w;
     int h_pad = max_wh - img_h;
     copyMakeBorder(img_input, img_input, 0, h_pad, 0, w_pad, BORDER_CONSTANT, Scalar(114, 114, 114));
-    cout << "img_input: " << img_input.size << endl;
     dnn::blobFromImage(img_input, img_input, 1.0f / 255.0f, Size(INPUT_SIZE[1], INPUT_SIZE[2]), Scalar(), true, false, CV_32F);
 }
 
