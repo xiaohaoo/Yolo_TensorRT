@@ -1,26 +1,10 @@
 /************************************************************************
-* Function Name : nucFindThread
-* Create Date : 2014/06/07
-* Author/Corporation : xiaohao
+* Project Name: Yolov8-TensorRT
+* Create Date: 2023/07/01
+* Author: xiaohao
 **
-Description : Find a proper thread inthread array.
-* If it’s a new then search an empty.
+Description : Using Tensorrt and Yolov8 Reasoning.
 *
-* Param : ThreadNo： someParamdescription
-* ThreadStatus： someParamdescription
-**
-Return Code : Return Code description,eg:
-ERROR_Fail: not find a thread
-ERROR_SUCCEED: found
-*
-* Global Variable : DISP_wuiSegmentAppID
-* File Static Variable : naucThreadNo
-* Function Static Variable : None
-*
-*------------------------------------------------------------------------
-* Revision History
-* No. Date Revised by Item Description
-* V0.5 2014/06/21 your name … …
 ************************************************************************/
 
 #include "main.h"
@@ -39,9 +23,9 @@ int main()
         trt_engine.preprocess();
         trt_engine.inference();
         trt_engine.draw_image();
-        putText(trt_engine.raw_image, "FPS: " + (1000 / exec_duration()), Point(10, 35), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0), 2);
+        putText(trt_engine.raw_image, "FPS: " + to_string((1000 / exec_duration())), Point(10, 35), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0), 2);
         imshow("Yolo", trt_engine.raw_image);
-        if (cv::waitKey(1) == 27)
+        if (cv::waitKey(1) == 27 || getWindowProperty("Yolo", WND_PROP_VISIBLE) < 1)
         {
             destroyAllWindows();
             cap.release();
