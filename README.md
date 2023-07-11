@@ -1,4 +1,4 @@
-# Yolov8_TensorRT
+# Yolov8 TensorRT
 
 Deploy the [YOLOV8](https://github.com/ultralytics/ultralytics) model for object detection using OpenCV and [TensorRT](https://github.com/NVIDIA/TensorRT).
 
