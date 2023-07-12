@@ -4,6 +4,9 @@ Deploy the [YOLOV8](https://github.com/ultralytics/ultralytics) model for object
 
 ## Overview
 
+![img_1_detected](assets/img_1_detected.png)
+![img_3_detected](assets/img_3_detected.png)
+
 ## Dependencies
 
 - CMAKE
