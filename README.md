@@ -20,8 +20,8 @@ Deploy the [YOLOV8](https://github.com/ultralytics/ultralytics) model for object
 git clone git@github.com:xiaohaoo/Yolo_TensorRT.git
 
 cd Yolo_TensorRT
-cmake -DCMAKE_BUILD_TYPE:STRING=Release -B build -G "Visual Studio 16 2019"
-cmake --build build --config Release --target install
+cmake -DCMAKE_BUILD_TYPE:STRING=Release -B build -G "Visual Studio 16 2019" -A x64
+cmake --build build --config Release --target install -j 22
 
 # run app
 cd build\output
