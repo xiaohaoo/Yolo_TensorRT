@@ -147,19 +147,19 @@ void TrtEngine::inference()
     vector<Rect> detect_boxes;
     vector<float> detect_scores;
     vector<int> detect_classes;
-    for (size_t i = 0; i < output.rows; i++)
+    for (int i = 0; i < output.rows; i++)
     {
         float *row = output.row(i).ptr<float>();
         float *max_class_socre = max_element(row + 4, row + 4 + 80);
         if (*max_class_socre > 0.25)
         {
-            int x = row[0];
-            int y = row[1];
-            int w = row[2];
-            int h = row[3];
-            int x0 = static_cast<int>((x - 0.5f * w));
-            int y0 = static_cast<int>((y - 0.5f * h));
-            Rect box(x0 / scale, y0 / scale, w / scale, h / scale);
+            float x = row[0];
+            float y = row[1];
+            float w = row[2];
+            float h = row[3];
+            float x0 = x - 0.5f * w;
+            float y0 = y - 0.5f * h;
+            Rect box(static_cast<int>(x0 / scale), static_cast<int>(y0 / scale), static_cast<int>(w / scale), static_cast<int>(h / scale));
             detect_boxes.push_back(box);
             detect_scores.push_back(*max_class_socre);
             detect_classes.push_back(static_cast<int>(max_class_socre - row - 4));
