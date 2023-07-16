@@ -4,8 +4,8 @@ Deploy the [YOLOV8](https://github.com/ultralytics/ultralytics) model for object
 
 ## Overview
 
-![img_1_detected](assets/img_1_detected.png)
-![img_3_detected](assets/img_3_detected.png)
+<img width=640 src="assets/img_1_detected.png" alt="img_1_detected"/>
+<img width=640 src="assets/img_3_detected.png"  alt="img_1_detected"/>
 
 ## Dependencies
 
